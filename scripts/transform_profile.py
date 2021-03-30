@@ -95,9 +95,9 @@ def print_header(filename):
         data = json.load(f)
     data['name'] = data['name'].replace('-', '_')
     print '#pragma once'
-    print '#include "util/tuple_hash.h"'
     print '#include <unordered_map>'
     print '#include <tuple>'
+    print '#include "util/tuple_hash.h"'
     print ''
     print 'namespace langdetectpp::profiles::langs {'
     print ''

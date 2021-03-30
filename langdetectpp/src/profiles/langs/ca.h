@@ -1,6 +1,6 @@
 #pragma once
-#include <tuple>
 #include <unordered_map>
+#include <tuple>
 #include "util/tuple_hash.h"
 
 namespace langdetectpp::profiles::langs {

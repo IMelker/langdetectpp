@@ -1,5 +1,4 @@
 #pragma once
-
 #include <unordered_map>
 #include <tuple>
 #include "util/tuple_hash.h"

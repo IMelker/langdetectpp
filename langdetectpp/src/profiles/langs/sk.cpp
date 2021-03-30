@@ -2884,7 +2884,7 @@ static const std::tuple<size_t, size_t, size_t> sk_n_words {
 };
 
 
-namespace langdetectpp { namespace profiles { namespace langs {
+namespace langdetectpp::profiles::langs {
 
 std::unordered_map<uint32_t, size_t> get_sk_one_grams() {
   std::unordered_map<uint32_t, size_t> result = sk_one_grams;
@@ -2906,4 +2906,4 @@ std::tuple<size_t, size_t, size_t> get_sk_n_words() {
   return result;
 }
 
-}}} // langdetectpp::profiles::langs
+} // langdetectpp::profiles::langs

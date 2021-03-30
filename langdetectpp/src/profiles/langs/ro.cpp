@@ -6087,7 +6087,7 @@ static const std::tuple<size_t, size_t, size_t> ro_n_words {
 };
 
 
-namespace langdetectpp { namespace profiles { namespace langs {
+namespace langdetectpp::profiles::langs {
 
 std::unordered_map<uint32_t, size_t> get_ro_one_grams() {
   std::unordered_map<uint32_t, size_t> result = ro_one_grams;
@@ -6109,4 +6109,4 @@ std::tuple<size_t, size_t, size_t> get_ro_n_words() {
   return result;
 }
 
-}}} // langdetectpp::profiles::langs
+} // langdetectpp::profiles::langs

@@ -65,7 +65,7 @@ def print_impl(filename):
     print '  %s, %s, %s' % tuple(data['n_words'])
     print '};\n\n'
 
-    print 'namespace langdetectpp { namespace profiles { namespace langs {\n'
+    print 'namespace langdetectpp::profiles::langs {\n'
 
     print 'std::unordered_map<uint32_t, size_t> get_%s_one_grams() {' % data['name']
     print '  std::unordered_map<uint32_t, size_t> result = %s;' % ('%s_one_grams' % data['name'])
@@ -87,7 +87,7 @@ def print_impl(filename):
     print '  return result;'
     print '}\n'
 
-    print '}}} // langdetectpp::profiles::langs'
+    print '} // langdetectpp::profiles::langs'
 
 
 def print_header(filename):
@@ -95,21 +95,18 @@ def print_header(filename):
         data = json.load(f)
     data['name'] = data['name'].replace('-', '_')
     print '#pragma once'
+    print '#include "util/tuple_hash.h"'
     print '#include <unordered_map>'
     print '#include <tuple>'
-    print '#include <folly/Hash.h>'
     print ''
-    print 'namespace langdetectpp { namespace profiles { namespace langs {'
+    print 'namespace langdetectpp::profiles::langs {'
     print ''
     print 'std::unordered_map<uint32_t, size_t> get_%s_one_grams();' % data['name']
-    print ''
     print 'std::unordered_map<std::tuple<uint32_t, uint32_t>, size_t> get_%s_bigrams();' % data['name']
-    print ''
     print 'std::unordered_map<std::tuple<uint32_t, uint32_t, uint32_t>, size_t> get_%s_trigrams();' % data['name']
-    print ''
     print 'std::tuple<size_t, size_t, size_t> get_%s_n_words();' % data['name']
     print ''
-    print '}}} // langdetectpp::profiles::langs'
+    print '} // langdetectpp::profiles::langs'
     print ''
 
 def throw_usage():

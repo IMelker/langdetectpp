@@ -7,4 +7,5 @@ temp
 *.log
 node_modules
 *.sublime-workspace
-
+cmake-build-*
+.idea

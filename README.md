@@ -70,6 +70,10 @@ There is also a utility method for getting the English name of the language code
     // "Arabic"
 ```
 
+### roadmap
+- TODO Set priority information about language probabilities
+- TODO Detect languages with multiple probabilities
+
 ### license
 
 Apache License version 2.0 (commercial-friendly) -- see the `LICENSE` file for the formal version.

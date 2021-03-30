@@ -29,7 +29,7 @@ class Profile
     }
 
     std::string getLanguageString() {
-        return stringOfLanguage(lang_);
+        return toShortName(lang_);
     }
 
     static std::shared_ptr<Profile> loadAf();

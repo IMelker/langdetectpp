@@ -65,8 +65,15 @@ enum class Language
     ZH_TW,
 };
 
-std::string stringOfLanguage(Language lang);
+// ISO 639-1 codes
+std::string toShortName(Language lang);
+Language fromShortName(const std::string& lang);
 
-std::string englishNameOfLanguage(Language lang);
+// ISO language name
+std::string toLongName(Language lang);
+Language fromLongName(const std::string& lang);
+
+
+
 
 } // langdetectpp

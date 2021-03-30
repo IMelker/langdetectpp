@@ -13,18 +13,16 @@ It uses the same language profiles as the original library, which are based on 1
 
 using langdetectpp::Detector;
 using langdetectpp::Language;
-using std::string;
-using std::cout;
 
 int main() {
     auto detector = Detector::create();
-    string someEnglishText = "Some english text to analyze.";
+    std::string someEnglishText = "Some english text to analyze.";
     Language lang = detector->detect(someEnglishText);
-    cout << langdetectpp::stringOfLanguage(lang) << std::endl;
+    std::cout << langdetectpp::toShortName(lang) << std::endl;
 
-    string someGermanText = "Im Rahmen der Trainingskontrollen k\u00f6nnen etwa 8.650 Kaderathleten gepr\u00fcft werden, die in drei Testpools aufgeteilt sind und an nationalen und internationalen Wettk\u00e4mpfen teilnehmen.";
+    std::string someGermanText = "Im Rahmen der Trainingskontrollen k\u00f6nnen etwa 8.650 Kaderathleten gepr\u00fcft werden, die in drei Testpools aufgeteilt sind und an nationalen und internationalen Wettk\u00e4mpfen teilnehmen.";
     lang = detector->detect(someGermanText);
-    cout << langdetectpp::stringOfLanguage(lang) << std::endl;
+    std::cout << langdetectpp::toShortName(lang) << std::endl;
 }
 ```
 
@@ -51,24 +49,24 @@ Initializing a `Detector` is relatively expensive because it needs to build up t
 The most likely language for a given string is returned as a `langdetect::Language`, which is an enum class.  There is a utility method for getting the string of the corresponding language code:
 
 ```c++
-std::string stringOfLanguage(langdetectpp::Language);
+    std::string toShortName(langdetectpp::Language);
 ```
 
 ```c++
     auto lang = langdetectpp::Language::EN;
-    string langName = langdetectpp::stringofLanguage(lang);
+    string langName = langdetectpp::toShortName(lang);
 ```
 
 There is also a utility method for getting the English name of the language code:
 
 ```c++
-std::string englishNameOfLanguage(langdetectpp::Language)
+    std::string toLongName(langdetectpp::Language)
 ```
 
 ```c++
     auto lang = langdetectpp::Language::AR;
-    string langName = langdetectpp::englishNameOfLanguage(lang);
-    cout << langName << endl;
+    string langName = langdetectpp::toLongName(lang);
+    std::cout << langName << std::endl;
     // "Arabic"
 ```
 

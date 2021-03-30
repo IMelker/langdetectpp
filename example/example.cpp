@@ -14,8 +14,9 @@ int main ()
             break;
 
         auto lang = detector->detect(line);
-        std::cout << line << "  ->  "
-                  << langdetectpp::stringOfLanguage(lang) << std::endl;
+      std::cout << line << "  ->  "
+                << langdetectpp::toLongName(lang) << "["
+                << langdetectpp::toShortName(lang) << "]" << std::endl;
     }
     return 0;
 }

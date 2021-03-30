@@ -45,7 +45,8 @@ int main() {
             logLine << " ";
         }
         std::cout << logLine.str() << "  ->  "
-                  << langdetectpp::stringOfLanguage(lang) << std::endl;
+                  << langdetectpp::toLongName(lang) << "["
+                  << langdetectpp::toShortName(lang) << "]" << std::endl;
         assert(elem.second == lang);
     }
 }

@@ -23,6 +23,10 @@ class DetectorImpl
     Language detect(const std::string &text) {
         ngrams::NGramExtractor extractor(text);
         auto extracted = extractor.extract();
+
+        if (extracted.empty())
+            return Language::UNKNOWN;
+
         DetectionRunner runner(profileGroup_, extracted);
         return runner.detect();
     }

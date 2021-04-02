@@ -39,6 +39,10 @@ class ExtractedNGrams
         return trigrams_[trigramDist_.get()];
     }
 
+    bool empty() {
+        return oneGrams_.empty() && bigrams_.empty() && trigrams_.empty();
+    }
+
   private:
     std::vector<std::uint32_t> oneGrams_;
     std::vector<std::tuple<std::uint32_t, std::uint32_t>> bigrams_;
